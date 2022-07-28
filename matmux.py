@@ -32,7 +32,7 @@ class Solution:
         for i in range(2):
             row = m1[i]
             row1 = m2[0]
-            row1 = m2[1]
+            row2 = m2[1]
             for j in range(2):
                 product = row[0] * row[j] + row[1] * row2[j]
                 if i == 0:
