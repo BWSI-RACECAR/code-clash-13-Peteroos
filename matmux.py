@@ -2,18 +2,12 @@
 Copyright MIT BWSI Autonomous RACECAR Course
 MIT License
 Summer 2022
-
 Code Clash #13 - Matrix Multiplication (matmux.py)
-
-
 Author: Ainsley Ward
-
 Difficulty Level: 6/10
-
 Prompt: You want to get ahead in your linear analysis class, so you decide to make a program 
 that calculates the product of two 2x2 matrices. Your inputs should be two arrays, each 
 representing a 2x2 matrix to be multiplied. (Don’t use numpy to solve this!!)
-
 Test Cases:
 input: m1 = [[4, 2],[3, 1]]; m2 = [[5, 6], [3, 8]]; output = [[26, 40], [18, 26]]
 input: m1 = [[0, 0],[0, 0]]; m2 = [[5, 6], [3, 8]]; output = [[0, 0], [0, 0]]
@@ -27,23 +21,29 @@ class Solution:
         # return: List[List[int]]
         
         # TODO: Write code below to return a nested list with the solution to the prompt
-        new_m1 = []
-        new_m2 = []
+        # answer = [[0, 0],[0, 0]]
+        # for i in range(len(m1)):
+        #     for j in range(len(m2[0])):
+        #          for k in range(len(m2)):
+        #             answer[i][j] += m1[i][k] * m2[k][j]
+        # for a in answer:
+        #     return answer[a]
+        n1 = []
+        n2 = []
         for i in range(2):
             row = m1[i]
             row1 = m2[0]
             row2 = m2[1]
             for j in range(2):
-                product = row[0] * row[j] + row[1] * row2[j]
+                product = row[0] * row1[j] + row[1] * row2[j]
                 if i == 0:
-                    new_m1.append(product)
+                    n1.append(product)
                 else:
-                    new_m2.append(product)
-        final_matrix = [new_m1, new_m2]
-        return final_matrix
+                    n2.append(product)
+        final = [n1, n2]
+        return final
+        pass
 
-
-            
 def main():
     array1 = input().split(" ")
     array2 = input().split(" ")
